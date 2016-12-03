@@ -45,6 +45,8 @@ build: $(RESULT)
 $(RESULT): $(SOURCES) $(HEADERS) $(THIS_MAKEFILE)
 	$(CC) $(CFLAGS) $(SOURCES) $(LIBS) -o $@
 
+OBJECTS = $(addsuffix .o,$(basename $(SOURCES)))
+
 %.o: %.cc $(HEADERS) $(THIS_MAKEFILE)
 	$(CC) $(CFLAGS) -c $< -o $@
 
@@ -57,5 +59,6 @@ $(RESULT): $(SOURCES) $(HEADERS) $(THIS_MAKEFILE)
 
 clean:
 	rm -f $(RESULT)
+	rm -f $(OBJECTS)
 
 
