@@ -8,20 +8,22 @@ SOURCES = \
 	  $(IMGUIDIR)/imgui.cpp \
 	  $(IMGUIDIR)/imgui_draw.cpp \
 	  $(IMGUIDIR)/imgui_demo.cpp \
-	  $(IMGUIDIR)/examples/opengl2_example/imgui_impl_glfw.cpp# \
-	#  $(SERIALDIR)/src/serial.cc \
-	#  $(SERIALDIR)/src/impl/unix.cc \
-	#  $(SERIALDIR)/src/impl/list_ports/list_ports_linux.cc 
+	  $(IMGUIDIR)/examples/opengl2_example/imgui_impl_glfw.cpp \
+	  $(SERIALDIR)/src/serial.cc \
+	  $(SERIALDIR)/src/impl/unix.cc \
+	  $(SERIALDIR)/src/impl/list_ports/list_ports_linux.cc 
 
 HEADERS = \
 	  $(wildcard $(IMGUIDIR)*.h) \
+	  $(IMGUIDIR)/examples/opengl2_example/imgui_impl_glfw.h \
 	  $(wildcard $(SERIALDIR)/include/serial/*.h) \
 	  $(wildcard $(SERIALDIR)/include/serial/impl/*.h)
 
 INCLUDES = \
 	 -I$(IMGUIDIR) \
-	 -I$(IMGUIDIR)\examples\opengl2_example \
-	 -I$(SERIALDIR)\include
+	 -I$(IMGUIDIR)/examples/opengl2_example \
+	 -I$(SERIALDIR)/include \
+	 -I$(SERIALDIR)/include/serial
 
 
 LIBS = -lGL `pkg-config --static --libs glfw3` 
