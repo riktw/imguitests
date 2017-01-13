@@ -1,3 +1,7 @@
 [submodule "serial"]
 	path = serial
 	url = https://github.com/wjwwood/serial.git
+[submodule "imgui"]
+	path = imgui
+	url = https://github.com/ocornut/imgui.git
+	branch = 2016-02-colorpicker
